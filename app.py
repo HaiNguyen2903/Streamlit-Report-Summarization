@@ -41,7 +41,7 @@ if __name__ == '__main__':
         st.title('Description')
 
         for uploaded_file in uploaded_files:
-            df = pd.DataFrame(pd.read_excel(uploaded_file, engine='calamine')) 
+            df = pd.DataFrame(pd.read_excel(uploaded_file)) 
 
             # drop duplicates
             df, num_dups = drop_duplicates(df)
@@ -77,8 +77,7 @@ if __name__ == '__main__':
                 final_df = concat_df(df_list)
 
                 # save df to excel file
-                final_df.to_excel(save_name, sheet_name="Final Report", index=False,
-                                  engine='xlsxwriter')
+                final_df.to_excel(save_name, sheet_name="Final Report", index=False)
 
                 # open and read saved excel file
                 with open(save_name, "rb") as template_file:
