@@ -14,8 +14,7 @@ def drop_duplicates(df):
     df = df.sort_values(by=['#', 'Điểm thi'], ascending=True)
     
     # keep the last one (highest score)
-    df.drop_duplicates(inplace=True, keep='last',
-                       subset=['Mã NV', 'Điểm thi'])
+    df.drop_duplicates(inplace=True, keep='last', subset=['Mã NV'])
     
     num_dups = old_len  - len(df)
     return df, num_dups
