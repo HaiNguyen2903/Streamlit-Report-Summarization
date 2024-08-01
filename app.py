@@ -11,7 +11,7 @@ def drop_duplicates(df):
     #                            'Ghi chú'])
 
     # sort by id and score
-    df = df.sort_values(by=['#', 'Điểm thi'], ascending=True)
+    df = df.sort_values(by=['Mã NV', 'Điểm thi'], ascending=True)
     
     # keep the last one (highest score)
     df.drop_duplicates(inplace=True, keep='last', subset=['Mã NV'])
