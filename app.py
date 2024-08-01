@@ -4,7 +4,11 @@ import os
 
 def drop_duplicates(df):
     old_len = len(df)
-    df.drop_duplicates(inplace=True)
+    df.drop_duplicates(inplace=True,
+                       subset=['Mã NV', 'Họ và tên', 'Chức danh', 
+                               'Chi nhánh', 'Phòng ban', 'Ngày tham gia', 
+                               'Ngày hoàn thành', 'Điểm bài học', 'Điểm thi',
+                               'Ghi chú'])
     num_dups = old_len  - len(df)
     return df, num_dups
 
